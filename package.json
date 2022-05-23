@@ -1,0 +1,25 @@
+{
+  "name": "countapi-action",
+  "version": "1.0.0",
+  "description": "GitHub action for CountAPI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx ncc build src/index.js --license licenses.txt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/owenandrews/countapi-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/owenandrews/countapi-action/issues"
+  },
+  "homepage": "https://github.com/owenandrews/countapi-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.8.2",
+    "countapi-js": "^1.0.2"
+  }
+}

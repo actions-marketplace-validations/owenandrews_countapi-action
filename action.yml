@@ -1,0 +1,15 @@
+name: 'CountAPI Action'
+description: 'GitHub action for CountAPI'
+inputs:
+  namespace:
+    description: 'CountAPI namespcae'
+    required: true
+  Key:
+    description: 'CountAPI key'
+    required: true
+outputs:
+  value: # id of output
+    description: 'The current count value'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
