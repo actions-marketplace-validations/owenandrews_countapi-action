@@ -33,7 +33,6 @@ switch (method) {
       setOutput("path", result.path);
       setOutput("value", result.value);
     }).catch((error) => {
-      console.log(error)
       setFailed(error);
     });
     break;

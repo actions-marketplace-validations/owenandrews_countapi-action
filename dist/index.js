@@ -6181,9 +6181,10 @@ switch (method) {
     break;
   case 'hit':
     countapi.hit(namespace, key).then((result) => {
-      setOutput("result", result);
+      setOutput("status", result.status);
+      setOutput("path", result.path);
+      setOutput("value", result.value);
     }).catch((error) => {
-      console.log(error)
       setFailed(error);
     });
     break;
@@ -6217,7 +6218,7 @@ function setFailed(message) {
 }
 
 function setOutput(name, value) {
-  core.info(JSON.stringify(value));
+  core.info(`${name}: ${JSON.stringify(value)}`);
   core.setOutput(name, value);
 }
 })();
