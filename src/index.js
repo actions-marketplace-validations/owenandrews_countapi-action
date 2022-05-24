@@ -43,14 +43,14 @@ switch (method) {
     });
     break;
   case 'info':
-    countapi.update(namespace, key).then((result) => {
+    countapi.info(namespace, key).then((result) => {
       setOutput("result", result);
     }).catch((error) => {
       setFailed(error);
     });
     break;
   case 'stats':
-    countapi.update().then((result) => {
+    countapi.stats().then((result) => {
       setOutput("result", result);
     }).catch((error) => {
       setFailed(error);
