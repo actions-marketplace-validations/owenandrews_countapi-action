@@ -10,49 +10,50 @@ switch (method) {
     countapi.get(namespace, key).then((result) => {
       setOutput("result", result);
     }).catch((error) => {
-      setFailed(error.message);
+      setFailed(error);
     });
     break;
   case 'set':
     countapi.set(namespace, key, core.getInput('value')).then((result) => {
       setOutput("result", result);
     }).catch((error) => {
-      setFailed(error.message);
+      setFailed(error);
     });
     break;
   case 'update':
     countapi.update(namespace, key, core.getInput('amount')).then((result) => {
       setOutput("result", result);
     }).catch((error) => {
-      setFailed(error.message);
+      setFailed(error);
     });
     break;
   case 'hit':
-    countapi.update(namespace, key).then((result) => {
+    countapi.hit(namespace, key).then((result) => {
       setOutput("result", result);
     }).catch((error) => {
-      setFailed(error.message);
+      console.log(error)
+      setFailed(error);
     });
     break;
   case 'create':
     countapi.create({ namespace, key, value: core.getInput('input'), enable_reset: core.getBooleanInput('enable_reset'), update_lowerbound: core.getInput('update_lowerbound'), update_upperbound: core.getInput('update_upperbound') }).then((result) => {
       setOutput("result", result);
     }).catch((error) => {
-      setFailed(error.message);
+      setFailed(error);
     });
     break;
   case 'info':
     countapi.update(namespace, key).then((result) => {
       setOutput("result", result);
     }).catch((error) => {
-      setFailed(error.message);
+      setFailed(error);
     });
     break;
   case 'stats':
     countapi.update().then((result) => {
       setOutput("result", result);
     }).catch((error) => {
-      setFailed(error.message);
+      setFailed(error);
     });
     break;
   default:
