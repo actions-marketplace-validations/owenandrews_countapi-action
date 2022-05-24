@@ -1,23 +1,23 @@
 name: 'CountAPI Action'
-description: 'GitHub action for CountAPI'
+description: 'Use CountAPI in your GitHub actions'
 inputs:
   method:
-    description: 'CountAPI method to run'
+    description: 'CountAPI method to run.'
     default: 'hit'
   namespace:
-    description: 'CountAPI namespcae'
+    description: 'CountAPI namespace.'
     required: true
   key:
-    description: 'CountAPI key'
+    description: 'CountAPI key.'
     required: true
   value:
-    description: 'Value to set a key to'
+    description: 'Value to set a key to.'
     default: 0
   amount:
-    description: 'Amount to increase/decrease a key by'
+    description: 'Amount to increase/decrease a key by.'
     default: 0
   enable_reset:
-    description: 'Allow key to be reset'
+    description: 'Allow key to be reset.'
     default: false
   update_lowerbound:
     description: 'Restrict update to not subtract more than this number.'
@@ -26,8 +26,11 @@ inputs:
     description: 'Restrict update to not add more than this number.'
     default: 1
 outputs:
-  result: # id of output
-    description: 'The current count value'
+  result:
+    description: 'The CountAPI result.'
 runs:
   using: 'node12'
   main: 'dist/index.js'
+branding:
+  icon: 'bar-chart'
+  color: 'green'
