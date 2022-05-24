@@ -8,7 +8,7 @@ Increment a key by one. If the key does not exist, a new key will be created at 
 ```yaml
 - name: Increment build number
     id: build_number
-    uses: owenandrews/countapi-action@main
+    uses: owenandrews/countapi-action@v1.0
     with:
         namespace: example.com #required
         key: build-number #required
@@ -29,8 +29,9 @@ Create a new key with a number of optional parameters.
 > ℹ️ If you'd just like to increment a number you can use the `hit` method, it will create a new key if one does not already exist.
 ```yaml
 - name: Example create counter
-  uses: owenandrews/countapi-action@main
+  uses: owenandrews/countapi-action@v1.0
   with:
+    method: create
     namespace: example.com #required
     key: build-number #required
     value: 10 #optional
@@ -53,8 +54,9 @@ Example result:
 Increment or decrement an existing key by a certain amount.
 ```yaml
 - name: Example update counter
-  uses: owenandrews/countapi-action@main
+  uses: owenandrews/countapi-action@v1.0
   with:
+    method: update
     namespace: example.com #required
     key: build-number #required
     amount: 10 #optional
@@ -75,8 +77,9 @@ Example result:
 Set a key to an arbitary value.
 ```yaml
 - name: Example set counter
-  uses: owenandrews/countapi-action@main
+  uses: owenandrews/countapi-action@v1.0
   with:
+    method: set
     namespace: example.com #required
     key: build-number #required
     value: 5 #optional
@@ -97,8 +100,9 @@ Example result:
 ### Get
 ```yaml
 - name: Example get counter
-  uses: owenandrews/countapi-action@main
+  uses: owenandrews/countapi-action@v1.0
   with:
+    method: get
     namespace: example.com #required
     key: build-number #required
 ```
@@ -115,8 +119,9 @@ Example result:
 Retrive information about a key.
 ```yaml
 - name: Example get counter info
-  uses: owenandrews/countapi-action@main
+  uses: owenandrews/countapi-action@v1.0
   with:
+    method: info
     namespace: example.com #required
     key: build-number #required
 ```
@@ -140,8 +145,9 @@ Example result:
 Get some CountAPI stats.
 ```yaml
 - name: Example get global CounterAPI stats
-  uses: owenandrews/countapi-action@main
+  uses: owenandrews/countapi-action@v1.0
   with:
+    method: stats
     namespace: example.com #required, but not used
     key: build-number #required, but not used
 ```
